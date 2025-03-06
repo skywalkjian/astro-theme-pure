@@ -9,7 +9,7 @@ import FriendList from '@/components/links/FriendList.astro'
 
 const headings = [
   { depth: 2, slug: 'common-links', text: 'Common Links' },
-  {/*{ depth: 2, slug: 'special-links', text: 'Special Links' },*/},
+  { depth: 2, slug: 'special-links', text: 'Special Links' }
   { depth: 2, slug: 'apply-links', text: 'Apply Links' }
 ]
 
@@ -27,7 +27,7 @@ const linksConf = config.integ.links
   <Collapse title='Link History Book'>
     <Timeline events={linksConf.logbook} />
   </Collapse>
- {/*<h2 id='special-links'>Special Links</h2>
+ <h2 id='special-links'>Special Links</h2>
   <FriendList list={friends[2]} />*/}
 
   <!-- apply-links -->

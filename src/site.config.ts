@@ -59,13 +59,13 @@ export const theme: ThemeUserConfig = {
   footer: {
     // Registration information for ICP (optional)
     registration: {
-      url: 'https://icp.gov.moe/?keyword=APTX4869',
-      text: 'Moe ICP APTX4869'
+      url: '',
+      text: ''
     },
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/cworld1/astro-theme-pure' }
+    social: { github: 'https://github.com/skywalkjian' }
   },
 
   content: {
@@ -85,15 +85,15 @@ export const integ: IntegrationUserConfig = {
     // Friend logbook
     logbook: [
       { date: '2024-07-01', content: '.' },
-      { date: '2024-07-01', content: 'vidit suscipit at mei.' },
-      { date: '2024-07-01', content: 'Quem denique mea id.' }
+      { date: '2024-07-01', content: '' },
+      { date: '2024-07-01', content: '' }
     ],
     // Yourself link info
     applyTip: [
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
-      { name: 'Link', val: 'https://astro-pure.js.org/' },
-      { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
+      { name: 'Link', val: 'https://skywalkjian-site.vercel.app' },
+      { name: 'Avatar', val: 'https://dl.img.timecdn.cn/2025/03/06/26dc9c3e7f3a69e093eab64935d3223b.png' }
     ]
   },
   // Enable page search function

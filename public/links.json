@@ -29,7 +29,7 @@
       "desc": "Inactive or rule-breaking friends",
       "link_list": []
     },
-    {/*
+    /*{
       "id_name": "special-links",
       "desc": "Other special links",
       "link_list": [
@@ -46,6 +46,6 @@
           "avatar": "https://www.travellings.cn/assets/travelling.png"
         }
       ]
-    */}
+    }*/
   ]
 }

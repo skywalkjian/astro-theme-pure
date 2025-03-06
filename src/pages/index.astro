@@ -66,7 +66,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
       </a>
     </section>*/
 }
-
+    
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
         <p class='text-muted-foreground'>A freshman</p>
@@ -75,6 +75,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         </p>
         <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
       </Section>
+
       {
         allPostsByDate.length > 0 && (
           <Section title='Posts'>
@@ -90,7 +91,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         )
       }
 
-      {
+      {/*
          <Section title='Experience'>
       <Card
         heading='Lorem Ipsum'
@@ -118,7 +119,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         imageClass='h-12 w-auto md:-start-16'
       />
     </Section> 
-      }
+      */}
       <Section title='Education'>
         <Card
           as='a'
@@ -128,7 +129,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           href='https://www.pku.edu.cn/'
           imagePath='/src/assets/pku.png'
         >
-          {
+          {/*
              <ul class='ms-4 list-disc text-muted-foreground'>
           <li>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
@@ -136,11 +137,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           </li>
           <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
         </ul> 
-          }
+         */ }//subtitle
         </Card>
       </Section>
 
-      <Section title='Website List'>
+      {/*<Section title='Website List'>
         <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
           <ProjectCard
             href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -168,9 +169,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
             imagePath='/src/assets/projects/wen-qiao-g_w8I64FiO0-unsplash.jpg'
           />
         </div>
-      </Section>
+      </Section>*/}
 
-      <Section title='Certifications'>
+      {/*<Section title='Certifications'>
         <Card
           as='a'
           heading='Lorem ipsum'
@@ -178,7 +179,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           date='July 2024'
           href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         />
-      </Section>
+      </Section>*/}
 
       <Section title='Skills'>
         <SkillLayout title='Languages' skills={languages} />

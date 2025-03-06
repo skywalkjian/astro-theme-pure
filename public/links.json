@@ -28,16 +28,6 @@
       "id_name": "inactive-links",
       "desc": "Inactive or rule-breaking friends",
       "link_list": []
-    },
-    {
-      "id_name": "special-links",
-      "desc": "其他特殊链接",
-      "link_list": [
-        {
-         
-        },
-        {
-         
-        }
+    }
   ]
 }

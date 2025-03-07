@@ -127,7 +127,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
           subheading='Major:Computer science'
           date='2024 September - now'
           href='https://www.pku.edu.cn/'
-          imagePath='/src/assets/pku.png'
+          imagePath={Astro.resolve('../assets/pku.png')}
         >
           
              <ul class='ms-4 list-disc text-muted-foreground'>

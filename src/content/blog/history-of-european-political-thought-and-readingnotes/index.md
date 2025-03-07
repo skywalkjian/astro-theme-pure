@@ -1,5 +1,5 @@
 ---
-title:欧洲政治思想史&读书笔记
+title:欧洲政治思想史and读书笔记
 publishDate: 2025-03-07 
 description: '第一次开坑读书'
 tags:

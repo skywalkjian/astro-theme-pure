@@ -1,5 +1,5 @@
 ---
-title:欧洲政治思想史&读书笔记
+title: 欧洲政治思想史读书笔记
 publishDate: 2025-03-07 
 description: '第一次开坑读书'
 tags:
@@ -12,7 +12,7 @@ language: '中文'
 
 ## PART1 列宁
 
-书目有：
+书目有
   
 1. 联共布党史
 2. 怎么办

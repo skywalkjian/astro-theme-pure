@@ -14,7 +14,7 @@ language: '中文'
 
 然后立刻体验了日本特色的便利店文化和自动售卖机文化（）
 
-![Local Image]("src/assets/IMG_20250504_214524.jpg")
+![Local Image](src/assets/IMG_20250504_214524.jpg "11")
 
 <details><summary>点击展开</summary>（旅行一定记得多拍照亦或及时记录，否则就只能像这次一样只能对着寥寥无几的照片回忆到底干嘛了): ）</details>
 

@@ -23,6 +23,15 @@ language: '中文'
 
 <details><summary>点击展开</summary>然后晚上还在赶ai引论作业</details>
 
+<<<<<<< HEAD
+## 5.4 first day & osaka expo 
+启程前往osaka expo,
+
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114562296710729&bvid=BV1j6jbziEHr&cid=30126902874&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+![Local Image](src/assets/jpphotos/IMG_20250504_101541.jpg "典型居民区风格")
+
+=======
+>>>>>>> parent of 29af984 (1)
 <details><summary>点击展开</summary>（旅行一定记得多拍照亦或及时记录，否则就只能像这次一样只能对着寥寥无几的照片回忆到底干嘛了): ）</details>
 
 

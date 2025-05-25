@@ -147,7 +147,7 @@ emm好吧~
 
 给朋友们带的东西找了半天终于是找到了，很高兴，但是可惜不全。
 
-![Local Image](src/assets/jpphotos/IMG_20250508_230926.jpg "给lac的cd唱片")
+
 
 ![Local Image](src/assets/jpphotos/IMG_20250507_183606.jpg "给lht的轻音画集")
 
@@ -162,34 +162,77 @@ emm好吧~
 
 晚上在银座的大街上闲逛，去吃了烧鸟（分量太少了于是又吃麦了，可恶）
 
-![Local Image](src/assets/jpphotos/IMG_20250507_220323.jpg "极苦涩的日本‘特色’柠檬茶")
+![Local Image](src/assets/jpphotos/IMG_20250507_220323.jpg "极苦涩的日本‘特色’柠檬汽水")
 
-## 5.8 Shimokita &tokyo tower
+## 5.8 Shimokita &tokyo tower & shibuya
 
-又是一天分头行动，来到了富有艺术气质的下北泽（）
+又是一天分头行动，来到了富有艺术气质的下北泽（）。老人很多，游客很少，于东京的繁华不同，这里已经是乡镇的气质了。
 
 
 ![Local Image](src/assets/jpphotos/IMG_20250508_135238.jpg "下北泽站")
 
-
-![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3c2t9q].jpg "下北泽shelter")
-
+很快发现了这个著名的位置），现在似乎在修路被封起来了，绕了一会才进去，没什么人。那根铁柱子上贴满了贴纸还有各种涂鸦，万国文字记录各国二次元的巡礼。
 ![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3ci177].jpg "跳跃！")
 
+之后的经历很有趣。想去starry的原型处，但是围着地图绕了半天没找到。最终找到了一个看起来很像的一个地下livehouse。想拍照，但是我怀疑这终究不是我所想的那个地方。这时从里面出来几个年轻人，看见我在拍照，就过来问。我有点害怕，听不懂日语，他们看起来也不是什么和蔼的人，我担心在这里乱拍在恐怕破坏了他们什么规矩，赶紧道歉
+
+我：I'm a tourtist I just take some photosすみません!(脑子已经乱了)
+
+他们（笑）：OK，ok。 然后就站在街边聊天
+
+我就胡乱拍了几张照片，这时他们其中一个人突然问我：“bochi the rock?(日式发音)”。
+
+我连忙说yeah，然后他们就笑着指着街对面，我才发现原来在一个隐蔽的角落那里才是我想找的下泽北shelter。然后就是thank you thank you ありがとうございます！！，（点头，鞠躬）(笑)
+
+多谢帮助！
+![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3c2t9q].jpg "下北泽shelter")
+
+之后就在下北泽街上乱逛，
+
+![Local Image](src/assets/jpphotos/IMG_20250508_134727.jpg "下北泽街景之一")
+
+这条街按照前人描述全都是孤独摇滚取景地，但是我似乎没有很能找出相似之处）。不过唱片店孤独摇滚的专辑依然在很显眼的位置，看来这部片子对下北的影响还是很大的。
+
+<details><summary>点击展开</summary>本来拍了视频的，现在发现拍的太难看了:(，不发了 </details>
+
+之后和gjz汇合，下午一起去东京塔。
+
+![Local Image](src/assets/jpphotos/IMG_20250508_144747.jpg "东京塔远望")
+
+东京城区俯瞰
+![Local Image](src/assets/jpphotos/IMG_20250508_154427.jpg "东京城区俯瞰")
+
+远望富士山依稀可见
+![Local Image](src/assets/jpphotos/IMG_20250508_161323.jpg "富士山远望")
+
+晚上去涩谷
+
+吃了一个巨量拉面，这么多天吃的最饱的一次
+![Local Image](src/assets/jpphotos/IMG_20250508_180336.jpg "巨大拉面")
+
+来到了日本最大的唱片店帮朋友买到了cd
+![Local Image](src/assets/jpphotos/IMG_20250508_230926.jpg "给lac的cd唱片")
+
+东京涩谷确实繁华，即使在上海外滩似乎也看不到如此多的世界各地的人，国际都市确实所闻不虚。但是手机没电了，也没带充电宝，于是先回酒店了，gjz去了涩谷sky
+（涩谷站的地铁人山人海）
+
+![Local Image](src/assets/jpphotos/IMG_20250508_191211.jpg "涩谷街景")
+![Local Image](src/assets/jpphotos/IMG_20250508_192557.jpg "涩谷街景俯瞰")
+
+## 5.9 tokyo university & back to beijing
+
+![Local Image](src/assets/jpphotos/IMG_20250509_105856.jpg "东大安田讲堂")
+东大的校区氛围像南京大学，但是比南大更开阔。校园内很幽静，绿意葱葱。
 
 
 
+![Local Image](src/assets/jpphotos/IMG_20250509_105808.jpg "校区一角")
+![Local Image](src/assets/jpphotos/IMG_20250509_110106.jpg "海报区")
+但是要去秋叶原帮朋友买剩下的东西，于是先走去秋叶原。随后立即赶往成田国际机场。
 
+终于在晚上回到了北京，圆满结束！    
 
-
-
-
-
-
-
-
-
-
+我以为，旅行中最重要的不是所谓“到了某个地方”，而是“经历了什么”。前往无穷的远方，和无数的人相遇，这次旅日确实给了我全新的体验。在一个交流存在障碍的异国，获得全新的经历，和陌生的人交流，让原来只在于脑海中的认知成为了现实可感的体验...有幸来到此地，之后也许我会和朋友们再来的...
 
 
 

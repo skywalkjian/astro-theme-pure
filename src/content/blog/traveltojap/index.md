@@ -94,7 +94,7 @@ emm好吧~
 
 午起，今日自由行动。今日各地下雨，在雨中乘车走路。坐轨道前往京都。雨中铁道，看见左侧窗外是乡下民居的错落，右侧是城市楼宇。今天去京都也是基本没有规划，除了想去看京阿尼工作室这一个想法以外没有考虑别的，所以列车会将我带向一个什么样的地方呢？顺着无限蔓延的铁道，我将去往未知的地方，铁道带着我一路飞驰，永远向前，永远追寻充满未知和希望的远方，这正是我一直所期待的。
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114562699363927&bvid=BV12zjtz7ENm&cid=30128541159&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="500" height="300"></iframe>
+<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114562699363927&bvid=BV12zjtz7ENm&cid=30128541159&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="500" height="300"></iframe>
 
 （雨中 前车窗）
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114562397373990&bvid=BV18GjbzREJJ&cid=30127293995&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="500" height="300"></iframe>
@@ -159,6 +159,8 @@ emm好吧~
 
 (石头门的地方找到了)
 ![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3b0msq].jpg "石头门")
+
+
 
 
 

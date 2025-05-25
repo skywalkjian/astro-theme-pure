@@ -37,7 +37,7 @@ language: '中文'
 
 ![Local Image](src/assets/IMG_20250504_114750.jpg "大阪世博会")
 真的没有克苏鲁元素吗？
-![Local Image](src/assets/IMG_20250504_120358.jpg "真的没有克苏鲁元素吗？")
+![Local Image](src/assets/IMG_20250504_144347.jpg "真的没有克苏鲁元素吗？")
 这样又觉得怪可爱的
 ![Local Image](src/assets/IMG_20250504_163858.jpg "这样又觉得怪可爱的")
 emm好吧~
@@ -86,6 +86,8 @@ emm好吧~
 （雨中 前车窗）
 
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114562397373990&bvid=BV18GjbzREJJ&cid=30127293995&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="500" height="300"></iframe>
+
+
 
 
 

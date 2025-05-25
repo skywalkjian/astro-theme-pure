@@ -37,27 +37,27 @@ language: '中文'
 
 ![Local Image](src/assets/jpphotos/IMG_20250504_114750.jpg "大阪世博会")
 真的没有克苏鲁元素吗？
-![Local Image](src/assets.jpphotos/IMG_20250504_144347.jpg "真的没有克苏鲁元素吗？")
+![Local Image](src/assets/jpphotos/IMG_20250504_120358.jpg "真的没有克苏鲁元素吗？")
 这样又觉得怪可爱的
-![Local Image](src/assets.jpphotos/IMG_20250504_163858.jpg "这样又觉得怪可爱的")
+![Local Image](src/assets/jpphotos/IMG_20250504_163858.jpg "这样又觉得怪可爱的")
 emm好吧~
-![Local Image](src/assets.jpphotos/IMG_20250504_144347.jpg "emm好吧~")
+![Local Image](src/assets/jpphotos/IMG_20250504_144347.jpg "emm好吧~")
 
 检录工作人员很有效率，检查时发生了小意外，试图说日语但失败x），最后英语救命。其实一路上交流一直用的是英语，由于在大阪东京这种大城市所以其实还是没有什么障碍的，实在不行也可以用this one +指+that one）（强大的同伴gjz竟然能听懂带口音的，膜拜）
 
 去了阿联酋馆，丹麦馆和非洲多国联合馆，途中还上了世博会场地外层观景圆环走廊。海风吹拂，同时场地内有音乐响起，“所以游目骋怀，足以极视听之娱，信可乐也”
 
-![Local Image](src/assets.jpphotos/IMG_20250504_121858.jpg "阿联酋馆")
+![Local Image](src/assets/jpphotos/IMG_20250504_121858.jpg "阿联酋馆")
 
-![Local Image](src/assets.jpphotos/IMG_20250504_134713.jpg "丹麦馆植物魔法")
-![Local Image](src/assets.jpphotos/IMG_20250504_152036.jpg "大叔cos博尔特")
-![Local Image](src/assets.jpphotos/IMG_20250504_143124.jpg "远眺1")
-![Local Image](src/assets.jpphotos/IMG_20250504_142600.jpg "远眺2")
+![Local Image](src/assets/jpphotos/IMG_20250504_134713.jpg "丹麦馆植物魔法")
+![Local Image](src/assets/jpphotos/IMG_20250504_152036.jpg "大叔cos博尔特")
+![Local Image](src/assets/jpphotos/IMG_20250504_143124.jpg "远眺1")
+![Local Image](src/assets/jpphotos/IMG_20250504_142600.jpg "远眺2")
 
 一直到晚上6点半，但是排队实在是太累了，我先回市区了，gjz去了美国和法国馆。
 然后找到了非常实惠的海鲜丼，现做寿司和大阪烧（忘记拍照了）
 （海鲜爱好者吃爽了，日本食物普遍份量小所以可以吃好几种东西，いただきます）
-![Local Image](src/assets.jpphotos/IMG_20250504_191838.jpg "海鲜丼")
+![Local Image](src/assets/jpphotos/IMG_20250504_191838.jpg "海鲜丼")
 
 <details><summary>点击展开</summary>然后晚上依然在赶ai引论作业</details>
 
@@ -68,13 +68,13 @@ emm好吧~
 晚上回酒店的路上下雨了，预报明天也会有雨。于是在便利店买了一把平平无奇的折叠伞，花了2100JPY（？！雨伞刺客）
 
 
-![Local Image](src/assets.jpphotos/IMG_20250505_222647.jpg "乌冬面")
+![Local Image](src/assets/jpphotos/IMG_20250505_222647.jpg "乌冬面")
 
 中国产品出海，有意思
-![Local Image](src/assets.jpphotos/IMG_20250505_210938.jpg "BYD")
+![Local Image](src/assets/jpphotos/IMG_20250505_210938.jpg "BYD")
 （唉，粥）（其实还有原和崩）
-![Local Image](src/assets.jpphotos/IMG_20250506_122503.jpg "粥")
-![Local Image](src/assets.jpphotos/IMG_20250507_161627.jpg "好像是崩？")
+![Local Image](src/assets/jpphotos/IMG_20250506_122503.jpg "粥")
+![Local Image](src/assets/jpphotos/IMG_20250507_161627.jpg "好像是崩？")
 
 <details><summary>点击展开</summary>ai引论作业不想调参了，交了完事</details>
 
@@ -86,8 +86,6 @@ emm好吧~
 （雨中 前车窗）
 
 <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114562397373990&bvid=BV18GjbzREJJ&cid=30127293995&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="500" height="300"></iframe>
-
-
 
 
 

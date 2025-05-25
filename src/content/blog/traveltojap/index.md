@@ -78,7 +78,7 @@ emm好吧~
 
 ![Local Image](src/assets/jpphotos/IMG_20250505_222647.jpg "乌冬面")
 
-中国产品出海，有意思。惊讶byd出海日本，日本油气车的时代终于要过去了吗。
+中国产品出海，有意思。惊讶byd出海日本。
 ![Local Image](src/assets/jpphotos/IMG_20250505_210938.jpg "BYD")
 
 （唉，粥）（其实还有原和崩）

@@ -155,10 +155,28 @@ emm好吧~
 
 之后一直呆在电子配件店）
 
-晚上不久就下雨了，气温一下骤降还伴有阴风。于是就回银座了。
+晚上不久就下雨了，气温骤降还伴有阴风。于是就回银座了。
 
 (石头门的地方找到了)
 ![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3b0msq].jpg "石头门")
+
+晚上在银座的大街上闲逛，去吃了烧鸟（分量太少了于是又吃麦了，可恶）
+
+![Local Image](src/assets/jpphotos/IMG_20250507_220323.jpg "极苦涩的日本‘特色’柠檬茶")
+
+## 5.8 Shimokita &tokyo tower
+
+又是一天分头行动，来到了富有艺术气质的下北泽（）
+
+
+![Local Image](src/assets/jpphotos/IMG_20250508_135238.jpg "下北泽站")
+
+
+![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3c2t9q].jpg "下北泽shelter")
+
+![Local Image](src/assets/jpphotos/[神奇海螺][对比图生成器][mb3ci177].jpg "跳跃！")
+
+
 
 
 

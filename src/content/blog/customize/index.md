@@ -1,5 +1,5 @@
 ---
-title: Personalized Customization Guide
+title: Personalized Customization Guide(此文一切权限归属于原作者Cworld)
 publishDate: 2024-07-27
 description: 'astro-theme-pure Personalized Customization Guide'
 tags:

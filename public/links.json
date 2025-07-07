@@ -5,13 +5,13 @@
       "desc": "Common links included in circle friends",
       "link_list": [
         {
-          "name": "Arthals' ink（PKU A神）",
+          "name": "Arthals' ink",
           "intro": "所见高山远木，阔云流风；所幸岁月盈余，了无拘束",
           "link": "https://arthals.ink/",
           "avatar": "https://cdn.arthals.ink/Arthals.png"
         },
         {
-          "name": "CWorld Site",
+          "name": "CWorld Site(本主题作者)",
           "intro": "求知若愚，虚怀若谷",
           "link": "https://cworld0.com/",
           "avatar": "https://cravatar.cn/avatar/1ffe42aa45a6b1444a786b1f32dfa8aa?s=200"
@@ -21,6 +21,12 @@
           "intro": "故梦偶拾",
           "link": "https://lingaochuan.github.io/swordlac.github.io/",
           "avatar": "https://dl2.img.timecdn.cn/2025/03/06/kiyoko.png"
+        },
+        {
+           "name": "Weitong Qian @ PKU",
+          "intro": "interested in AutoML,RL, and AI in general",
+          "link": "https://skyllwt.github.io/",
+          "avatar": "https://skyllwt.github.io/author/%E9%92%B1%E9%9F%A6%E6%BD%BC/avatar_hu11091352410254069244.png"
         }
       ]
     },

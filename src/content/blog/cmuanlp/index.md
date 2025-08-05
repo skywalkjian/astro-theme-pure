@@ -1,3 +1,13 @@
+---
+title: Notes of CMU ANLP 
+publishDate: 2025-07 
+description: 'cmu高级自然语言处理'
+tags:
+  - ai
+  - nlp  
+heroImage: { src: './thumbnail.jpg', color: '#B4C6DA' }
+language: '中文&ENG'
+---
 # CMU 11-711: Advanced Natural Language Processing (ANLP)笔记（combined with 2024spring 2024fall 2025spring）
 
 
@@ -149,7 +159,7 @@ graph TD
         L --> M[probs];
     end
 
-
+所有我们的基于深度学习的任务都可以归纳为利用各种神经网络架构去提取句子的特征（呈现为一个向量），这个向量包含了语言的features,也就是这句话的所有的信息，之后我们在通过神经网络训练提取出为了完成我们目标任务所需要的所有信息，并根据此即可完成任务（体现为得到scores，然后依据他来得到一个结果）.
 
 
 

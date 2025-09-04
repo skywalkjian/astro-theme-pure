@@ -283,8 +283,8 @@ $$C_t=f_t*C_{t-1}+i_t*\tilde{C}_t$$
 
 LSTM的优势在于缓解了RNN的梯度消失问题，使得模型能够更好地捕捉长期依赖关系。
 如何实现？我们看到：  
-$$\frac{\mathrm{d}L}{\mathrm{d}C_t}=\frac{\mathrm{d}L}{\mathrm{d}h_t}\cdot\frac{\mathrm{d}h_t}{\mathrm{d}C_t},it\ can\ be\ solved\ easily$$
-进行梯度回传
+$$\frac{\mathrm{d}L}{\mathrm{d}C_t}=\frac{\mathrm{d}L}{\mathrm{d}h_t}\cdot\frac{\mathrm{d}h_t}{\mathrm{d}C_t},it\ can\ be\ solved\ easily$$  
+进行梯度回传  
 $$\frac{\mathrm{d}L}{\mathrm{d}C_{t-1}}=\frac{\mathrm{d}L}{\mathrm{d}C_t}\cdot\frac{\mathrm{d}C_t}{\mathrm{d}C_{t-1}},we\ focus\ on\ \frac{\mathrm{d}C_t}{\mathrm{d}C_{t-1}}$$
 
 $$
@@ -307,7 +307,7 @@ $$\frac{\mathrm{d}L}{\mathrm{d}C_{t-1}}\approx f_t$$
 
 #### 3.2.7.3 CNN:  
 
-CNN在语言处理中很简单，就是简单的设定滑动窗口大小然后逐一采集特征：
+CNN在语言处理中很简单，就是简单的设定滑动窗口大小然后逐一采集特征：  
 $$h_t=conv(W_x[x_{t-k};x_{t-k+1};...;x_{t+k}])$$
 
 如果是自回归模型进行语言生成的话，就改成：
@@ -319,7 +319,7 @@ CNN的用途：可以提取出几个连着的token的特征，这样可以提取
 指标：  
 参数量（Parameter count）： 指的是模型中可训练的参数总数。参数量越少，模型通常越小，需要的内存和计算资源也越少，但模型的表达能力可能受限。  
 内存使用（Memory usage，主要看峰值）： 指的是模型运行时占用的内存大小，包括模型本身以及在推理（或训练）过程中所需的临时内存。  
-延迟（到第一个令牌，到最后一个令牌）  
+延迟（生成第一个token，到最后一个token所花的时间）  
 吞吐量（Throughput）： 指的是在单位时间内模型能处理的请求（或数据）总量。吞吐量越高，说明模型在处理批量任务时越高效，能够更好地服务多个并发用户。  
 蒸馏/压缩（distillation/compression）”和“生成算法（generation algorithms）都是为了提高模型的效率和性能而提出的技术手段。  
 #### 3.2.8.1 mini-batching
@@ -409,7 +409,12 @@ $$f(q,k)=\frac{q^Tk}{\sqrt{|k|}}$$
 >*    Feed-forward layer（前馈层）
 
 两种transformer本质一样，我们以全解码模型为例展开分析。  
+1. 首先进行word embedding,也就是之前讲过的词向量化操作，可以运用之前的知识（2.2节），不再赘述  
 
+2. 进行位置编码（positional encoding）。(解释清楚位置编码需涉及到多头注意力机制的原理，可以先往后看) 由于注意力机制对每个词向量进行kqv的查询，我们会发现对于一个同样的词，他在前后文中的表现出的语义完全相同，我们无法区别他们，但是实际上，两者的意思肯定会有差别。  
+比如说两个“big”在不同上下文中的含义可能完全不同，一个可能是修饰“big cat”，另一个可能是“修饰big data”，这就需要位置编码来帮助模型区分。  
+所以我们会在词向量化的时候在原有矩阵$W$的基础上加一个包含位置信息的矩阵$W_{pos}$，最终得到的词向量为$(W + W_{pos})x$。
+3. 进行多头注意力机制处理：首先介绍普通的 
 
 
 

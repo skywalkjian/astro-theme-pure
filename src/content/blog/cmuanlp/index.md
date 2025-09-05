@@ -373,16 +373,16 @@ query（查询向量）,key（键向量）
 ### 4.1.3 Attention Score Functions
 我们前面只说了kq之间可以建立关系得到注意力分数，但是具体的计算方法有多种。  
 * **Multi**-**layer** **Perceptron**(**MLP**)
-$$f(q, k) = W_1\text{tanh}(W_2[q,k])$$
+$$f(q, k) = W_1\text{tanh}(W_2[q,k])$$  
     Flexible, often very good with large data（flexible运用了非线性的tanh使得学习能力更强）
 * **Bilinear**(双线性函数)
-$$f(q, k) = q^T W k$$
+$$f(q, k) = q^T W k$$  
     More efficient than MLP, but less flexible（）
 *  **Dot Product**
-$$f(q,k)=q^Tk$$
+$$f(q,k)=q^Tk$$  
     No parameters! But requires sizes to be the same.
 * **Scaled Dot Product**
-$$f(q,k)=\frac{q^Tk}{\sqrt{|k|}}$$
+$$f(q,k)=\frac{q^Tk}{\sqrt{|k|}}$$  
     Problem: scale of dot product increases as dimensions get 
     larger 
     Fix: scale by size of the vector

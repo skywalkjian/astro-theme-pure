@@ -1,6 +1,6 @@
 ---
-title: Notes of CMU 11-711: Advanced Natural Language Processing (ANLP)（combined with 2024spring 2024fall 2025spring）
-publishDate: 2025-07 
+title: Notes of CMU 11-711:advanced natrual language process
+publishDate: 2025-07
 description: 'cmu高级自然语言处理'
 tags:
   - ai
@@ -8,9 +8,6 @@ tags:
 heroImage: { src: './thumbnail.jpg', color: '#B4C6DA' }
 language: '中文&ENG'
 ---
-
-
-
 
 # 0. before you read
 当下以大语言模型llm为主导的的nlp领域发展迅速，日新月异，笔者从课程安排来看，几乎每年都有变化，内容也会有所变动。所以这份笔记也许也应当具有时效性并随着时间推移进行迭代。但无论如何，姑且记录，作为个人学习梳理

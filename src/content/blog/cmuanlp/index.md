@@ -12,6 +12,7 @@ language: '中文&ENG'
 # 0. before you read
 当下以大语言模型llm为主导的的nlp领域发展迅速，日新月异，笔者从课程安排来看，几乎每年都有变化，内容也会有所变动。所以这份笔记也许也应当具有时效性并随着时间推移进行迭代。但无论如何，姑且记录，作为个人学习梳理
 
+test
 # 1. Introduction to NLP
 nlp(natural language processing) 自然语言处理，研究如何让计算机理解人类语言的学科
 ## 1.1 自然语言处理问题总的的来说可以归结为如下几个问题

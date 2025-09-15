@@ -44,7 +44,7 @@ GPU 的工作
 kernel_function<<< gridDim, blockDim >>>(args);
 ```
 这就是在调用一个kernel函数，其中gridDim和blockDim分别表示网格和线程块的大小（gridDim表示网格中block的数量，blockdim表示block中线程数量），args表示传递给kernel函数的参数。让threads并行地执行kernel函数。  
-而具体定义kernel中，我们使用threadIdx.x来表示当前线程的索引，从而体现出每个thread执行相同函数同时又负责任务中的不同部分，进而达到并行效果。
+而具体定义kernel中，我们使用threadIdx.x来表示当前线程在他的线程块中的索引（非全局索引），从而体现出每个thread执行相同函数同时又负责任务中的不同部分，进而达到并行效果。
 ```
 __global__ void relu_gpu(float* in, float* out) {
  int i = threadIdx.x;
@@ -56,3 +56,25 @@ tips：由于物理上的限制（芯片本身限制），所以blockDim一般�
 ## 1.3 GPU Memory and Hardware
 在GPU的储存中，tensor的储存方式在物理上表现为一块连续的内存，但是逻辑上，我们将其分成多个部分，每个部分储存一个tensor。  
 ![Local Image](src/assets/imgs-aicode/2.png)
+右边的size(表示tensor的形状)，stride（表示在每一个维度上，tensor的一格变化对应连续的物理内存的变化），type（表示储存的数据的类型），从而我们可以直接用这几个量直接来表示tensor的所有信息。所以之后涉及的一些tensor操作，比如切片，旋转之类的，只要改这几个量就可以了，物理内存并不发生变化（可以理解为只修改了索引），于是相比于原来我们可能通过循环来进行的tensor修改，这种方法的时间复杂度为O(1)。（这就是为什么写pytorch的时候不要用循环，要用tonsor操作）  
+
+### 1.3.1 3 kinds of memory of gpu
+和cpu读取内存一样，GPU也有自己的显存（虽然技术语境下说的和日常使用并不太一样）  
+主要有local shared global三种形式的memory  
+* local ：最快，单个thread自己的memory
+* shared ：较快，一个block中多个线程共享的
+* global：最慢，全局共享的，容量也最大，一般说的显存大小指的是这个
+Highlight: 我们可以通过将数据从全局内存转移到共享内存来进行加速  
+### 1.3.2 Coalesced Global Memory Access
+![Local Image](src/assets/imgs-aicode/3.png)
+三种内存访问/写入形式：连续的，规律跳格，随机的，三种模式的效率依次递减  
+所以，我们在设计并行程序的时候应当尽可能地使得内存的并行使用连续。  
+例如图中的  
+```cpp
+t=x[i]
+```
+这里的每个i在并行的运行中相当于分别对应x[0],x[1],x[2]...(每个并行程序的索引不同，访问内存也不同)，于是是连续的，效率最高  
+```cpp
+t=x[i*2]
+```
+这个就是stride了

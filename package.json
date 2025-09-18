@@ -26,6 +26,7 @@
     "@waline/client": "^3.5.1",
     "astro": "^5.1.9",
     "astro-pure": "1.2.5",
+    "dayjs": "^1.11.18",
     "katex": "^0.16.21",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",

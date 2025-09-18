@@ -77,4 +77,5 @@ t=x[i]
 ```cpp
 t=x[i*2]
 ```
-这个就是stride了
+这个就是stride了  
+test

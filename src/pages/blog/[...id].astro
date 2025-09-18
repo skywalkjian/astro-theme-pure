@@ -28,7 +28,7 @@ const { post, posts } = Astro.props
 const { Content, headings, remarkPluginFrontmatter } = await render(post)
 const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
   .tz("Asia/Shanghai")
-  .format("HH:mm:ss DD MMMM YYYY UTC");
+  .format("HH:mm:ss DD MMMM YYYY UTC+8");
 ---
 
 <PostLayout {post} {posts} {headings} {remarkPluginFrontmatter}>

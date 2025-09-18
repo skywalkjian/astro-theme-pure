@@ -4,6 +4,11 @@ import { render, type CollectionEntry } from 'astro:content'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import PostLayout from '@/layouts/BlogPost.astro'
 
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
+
 export const prerender = true
 
 export async function getStaticPaths() {
@@ -21,6 +26,9 @@ type Props = {
 
 const { post, posts } = Astro.props
 const { Content, headings, remarkPluginFrontmatter } = await render(post)
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .format("HH:mm:ss DD MMMM YYYY UTC");
 ---
 
 <PostLayout {post} {posts} {headings} {remarkPluginFrontmatter}>

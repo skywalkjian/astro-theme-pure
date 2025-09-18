@@ -1,5 +1,6 @@
 // @ts-check
 //1
+import { remarkModifiedTime } from './remark-modified-time.mjs';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import vercel from '@astrojs/vercel'
 import AstroPureIntegration from 'astro-pure'
@@ -78,7 +79,7 @@ export default defineConfig({
   },
   // Markdown Options
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath,remarkModifiedTime],
     rehypePlugins: [
       [rehypeKatex, {}],
       rehypeHeadingIds,

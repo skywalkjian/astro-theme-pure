@@ -32,5 +32,5 @@ const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
 ---
 
 <PostLayout {post} {posts} {headings} {remarkPluginFrontmatter}>
-  <Content /><p>latest updating time：{lastModified}</p>
+  <p>latest updating time：{lastModified}</p><Content />
 </PostLayout>

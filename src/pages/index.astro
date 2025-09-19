@@ -12,7 +12,7 @@ import SkillLayout from '@/components/home/SkillLayout.astro'
 import avatar from '@/assets/avatar.png'
 import config from '@/site-config'
 
-const languages = ['CPP', 'Python']
+const languages = ['CPP', 'Python','Rust']
 const frontend = ['waiting']
 const backend = ['waiting']
 
@@ -69,9 +69,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
     
     <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
       <Section title='About'>
-        <p class='text-muted-foreground'> Though this is now a desolate wilderness, perhaps one day it will bloom with a sky full of stars.</p>
+        <p class='text-muted-foreground'> I am an undergraduate student majoring in Computer Science, and my current primary interest lies in Artificial Intelligence.</p>
         <p class='text-muted-foreground'>
-          waiting
+          This is my personal website, designed to host my study notes and share some of my thoughts and ideas.Though this is now a desolate wilderness, perhaps one day it will bloom with a sky full of stars.
         </p>
         <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
       </Section>
@@ -124,7 +124,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <Card
           as='a'
           heading='Peking University'
-          subheading='Major:Computer science'
+          subheading='Majoring in Computer Science with a focus on Artificial Intelligence'
           date='2024 September - now'
           href='https://www.pku.edu.cn/'
         >
@@ -132,7 +132,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
              <ul class='ms-4 list-disc text-muted-foreground'>
           
           <li>
-            Though this is now a desolate wilderness, perhaps one day it will bloom with a sky full of stars. I hope,one day... I hope ...
+            I am honored to study at pku EECS
             {/*Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
             molestiae laboriosam pariatur!*/}
           </li>

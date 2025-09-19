@@ -7,35 +7,35 @@ import ToolSection from '@/components/about/ToolSection.astro'
 
 const headings = [
   { depth: 2, slug: 'hobbies', text: 'Hobbies' },
-  { depth: 2, slug: 'tools', text: 'Tools' },
+  /*{ depth: 2, slug: 'tools', text: 'Tools' },*/
   { depth: 2, slug: 'social-networks', text: 'Social Networks' },
-  { depth: 2, slug: 'gossips', text: 'Gossips' },
+  /*{ depth: 2, slug: 'gossips', text: 'Gossips' },*/
   { depth: 2, slug: 'about-blog', text: 'About Blog' }
 ]
 ---
 
 <PageLayout title='About' {headings} info='/about'>
-  <p>A freshman major in computer science</p>
+  <p>A Sophomore student major in computer science,interested in AI.Currently,exploring nlp ,cv,and ai infra etc.</p>
   <p>
-   waiting to update11123123
+   I have a wide range of interests,particularly fascinated by economics and political science (expecially Marxist Political Economy).I enjoy strategy games such as Civilization series and Paradox Interactive titles like Stellaris.
+   Also ,I'm a Long-time Minecraft player .
 
   </p>
-  <p>My motto: Stay hungry, Stay foolish. <Spoiler>这里可以夹私货</Spoiler></p>
+  <p> <Spoiler></Spoiler></p>
   <Button title='Sponsor Me' class='w-fit' href='/projects#sponsorship' style='ahead' />
 
   {/* general-talk */}
   <h2 id='hobbies'>Hobbies</h2>
   <ul>
-    <li>waiting</li>
-    <li>waiting</li>
-    <li>waiting</li>
-    <li>waiting</li>
+    <li>ACG</li>
+
+
   </ul>
 
   {/* tools */}
   <h2 id='tools'>Technoledge Stack</h2>
   <p>Current support tools as follow:</p>
-  <ToolSection
+  {/* <ToolSection
     class='mb-5'
     title='Design'
     tools={[
@@ -47,7 +47,8 @@ const headings = [
       }
 
     ]}
-  />
+  /> 
+  */}
   <ToolSection
     class='mb-5'
     title='Productivity'

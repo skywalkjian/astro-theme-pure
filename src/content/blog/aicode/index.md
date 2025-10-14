@@ -78,3 +78,4 @@ t=x[i]
 t=x[i*2]
 ```
 这个就是stride了  
+![alt text](image.png)

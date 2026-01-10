@@ -52,7 +52,7 @@ export const theme: ThemeUserConfig = {
       { title: 'Projects', link: '/projects' },
       { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' },
-      {title: 'CV', link: 'public\cv\cv.pdf'}
+      {title: 'CV', link: 'public/cv/cv.pdf'}
     ]
   },
 

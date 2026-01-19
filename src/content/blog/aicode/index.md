@@ -540,9 +540,7 @@ transpose_per_element<<<N, N>>>(d_in, d_out);
 图片展示了 List 1 中的元素 `7` 如何利用二分查找计算其在最终归并结果中的位置：
 
 * **List 1**： $\left[1, 3, \underline{7}, 11, 13\right]$
-    * 索引（在 List 1 中）：$\left[0, 2, \underline{4}, 7, 8\right]$
 * **List 2**： $\left[2, 4, 8, 10, 14\right]$
-    * 索引（在 List 2 中）：$\left[1, 3, 5, 6, 9\right]$
 
 假设某个线程被分配处理 List 1 中的元素 $\underline{7}$：
 
@@ -550,11 +548,11 @@ transpose_per_element<<<N, N>>>(d_in, d_out);
 2.  **查找结果**：元素 `7` 应该插在 `4` 和 `8` 之间。
     * 在 List 2 中，比 `7` 小的元素有 `2` 和 `4`，共 **2** 个元素。
 3.  **计算最终位置**：
-    * `7` 在 **List 1** 中的索引是 **4**。
+    * `7` 在 **List 1** 中的索引是 **2**。
     * `7` 在 **List 2** 中前面有 **2** 个元素比它小。
     * `7` 在最终归并结果中的位置是： List 1 中的索引 + List 2 中前面比它小的元素个数
         $$\text{Position}(\text{element}) = \text{Index in List 1} + \text{Count of smaller elements in List 2}$$
-        $$\text{Position}(7) = 4 + 2 = 6$$
+        $$\text{Position}(7) = 2 + 2 = 4$$
 
 * **箭头的意义**：
     * 箭头从 `7` 指向 List 2 中的 `8` 和 `4` 之间的位置，表示通过二分查找确定了**分隔点**。
@@ -847,3 +845,121 @@ cudaMemcpy ( host4, dev4, size, D2H ); // 5. 设备到主机拷贝 (Device to Ho
 
 这张图是 CUDA 性能优化的指南：要最大化 Fermi 架构的性能，程序应该将工作分解为 3 或 4 个流，并尝试实现 **Kernel 计算、H2D 拷贝、D2H 拷贝和 CPU 计算**之间的最大重叠。更新的 GPU 架构（如 Kepler, Pascal, Volta, Ampere 等）已经放宽了这些限制，提供了更高的并行度和更多的并发传输能力。
 
+## stream Asynchronous (example)
+
+![alt text](image-35.png)
+
+* 异步stream之间会发生冲突，所以每个stream处理的数据对象应该互相独立不能相互干扰。
+
+```c
+cudaStream_t stream1, stream2, stream3, stream4;
+cudaStreamCreate (&stream1);
+// ... 对 stream2, stream3, stream4 也会调用 cudaStreamCreate
+```
+
+建立了几个streams，然后创建并初始化一个 流 stream 
+
+```c
+cudaMalloc (&dev1, size);
+cudaMallocHost (&host1, size); // pinned memory required on host
+```
+
+* cudaMalloc：在设备（GPU）上分配内存 (dev1)。
+
+* cudaMallocHost：在主机（CPU）上分配页锁定内存 (pinned memory) (host1)。
+
+* 重要性： 在主机和设备之间进行异步内存复制（如 cudaMemcpyAsync）必须使用页锁定内存，因为它允许 DMA (Direct Memory Access) 操作，从而使 CPU 和 GPU 可以同时执行其他任务。
+
+```c
+cudaMemcpyAsync (dev1, host1, size, H2D, stream1);
+```
+进行异步操作：  
+异步内存复制 (Host to Device)：将数据从主机 (host1) 复制到设备 (dev1)。  
+操作被安排在 stream1 中执行。CPU 不会等待复制完成。  
+
+之后就是异步的，在各个流的kernel运行  
+## 显式同步的一些操作
+
+### **Explicit Synchronization** (显式同步)
+
+CUDA 提供了多种方法来强制主机（CPU）或设备（GPU）等待操作完成。
+
+---
+
+### 1. 同步所有操作
+
+* **`cudaDeviceSynchronize()`**
+    * **作用：** 这是一个最“重”的同步调用。它会阻塞主机线程（CPU），直到**所有**在 GPU 上或主机上已发出的 CUDA 调用（包括所有流中的所有操作，如内存复制和内核执行）全部完成。
+    * **描述：** Blocks host until all issued CUDA calls are complete (阻塞主机，直到所有已发出的 CUDA 调用都完成)。
+
+---
+
+### 2. 同步特定流
+
+* **`cudaStreamSynchronize ( streamid )`**
+    * **作用：** 阻塞主机线程（CPU），直到在参数 `streamid` 所指定的**单个流**中的所有操作都完成。
+    * **描述：** Blocks host until all CUDA calls in `streamid` are complete (阻塞主机，直到 `streamid` 中的所有 CUDA 调用都完成)。
+    * **对比 `cudaDeviceSynchronize()`：** 它的同步范围更小，只针对特定的流，允许其他流中的操作继续并发执行。
+
+---
+
+### 3. 使用事件（Events）进行同步
+
+事件是一种更灵活、更细粒度的同步机制，主要用于**流间的同步**或**时间测量**。
+
+* **作用：** Create specific 'Events', within streams, to use for synchronization (在流内创建特定的“事件”，用于同步)。
+
+#### 相关的 CUDA API：
+
+1.  **`cudaEventRecord ( event, streamid )`**
+    * **作用：** 在指定的 `streamid` 中的当前点记录一个 `event`。当流执行到该点时，事件将被标记。这个调用本身是异步的。
+
+2.  **`cudaEventSynchronize ( event )`**
+    * **作用：** 阻塞主机线程（CPU），直到指定的 `event` 被标记（即，在记录该事件的流中的所有操作都已完成）。它与 `cudaStreamSynchronize` 类似，但同步的是事件，而不是整个流。
+
+3.  **`cudaStreamWaitEvent ( stream, event )`**
+    * **作用：** 这是一个**设备端**的同步机制，不会阻塞主机。它指示 `stream` 必须等到 `event` 被标记后才能开始执行其后续操作。
+    * **主要用途：** 用于实现**流间同步**，确保一个流中的操作在另一个流中的操作完成后才开始。
+
+4.  **`cudaEventQuery ( event )`**
+    * **作用：** 检查指定的 `event` 是否已经被标记完成，而**不阻塞**主机线程。
+    * **主要用途：** 用于非阻塞地轮询（polling）GPU 状态。
+
+### 总结：
+
+显式同步机制对于控制并发、确保数据依赖性和正确性至关重要：
+
+* **`cudaDeviceSynchronize()`**：同步一切（最慢，但最安全）。
+* **`cudaStreamSynchronize()`**：同步特定流（主机等待）。
+* **Events (事件)**：提供最灵活的同步，特别适用于**流间同步** (`cudaStreamWaitEvent`) 和**时间测量**。
+
+
+# 5 Matrix Product
+
+## Why Matrix Product?
+
+在深度学习中，矩阵乘法是非常核心的操作。   
+无论是前向传播（Forward Propagation）还是反向传播（Backpropagation），基本的全连接层（Fully Connected Layer）卷积层（Convolutional Layer）和attention层，大量的计算都涉及矩阵乘法。  
+
+例如基本的Y=WX操作的正反向传播：
+* $$Y_{m \times n} = W_{m \times k} \times X_{k \times n}$$
+* $$\frac{\partial L}{\partial X_{k \times n}} = W_{m \times k}^T \times \frac{\partial L}{\partial Y_{m \times n}}$$
+* $$\frac{\partial L}{\partial W_{m \times k}} = \frac{\partial L}{\partial Y_{m \times n}} \times X_{k \times n}^T$$
+
+## A*B
+对于最朴素的CPU实现$A_{m \times k} * B_{k \times n}$，可以使用三重循环来完成，循环行列然后进行向量点乘，复杂度是MNK。  
+
+而朴素GPU实现则是为每个输出元素$C_{i \times j}$分配一个线程，然后每个线程用来计算对应的点乘,stepcomplexity是$O(K)$。
+
+![alt text](image-36.png)
+代码的逻辑如下图：我们将CPU中grid对应为我们的最终输出结果$C$,每一个线程的位置对应着结果的位置$C_{i \times j}$，而`if (row < M && col < N)`是重要的part，用于框定我们需要的计算单元。像下图中，我们按照标准开了32x32的block和grid，但我们只用其中需要的M*N方阵。
+
+而row*K+k的操作则是将2维的线程坐标拉成一维的实际数据在memory中的储存形式
+
+![alt text](image-37.png)
+
+## Tile Quantization
+如图所示，我们在规划block的时候会发现，由于要计算的矩阵大小不一定是32的整数倍，所以会出现一些block中有些线程是没有实际计算任务的，他们被空出来（对应着前面函数里面被if语句跳过的部分）。
+![alt text](image-38.png)
+
+为了避免这种资源浪费，我们可以使用**Tile Quantization**的方式来规划block的大小。  

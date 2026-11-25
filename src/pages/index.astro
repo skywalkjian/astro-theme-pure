@@ -6,6 +6,7 @@ import pku from '@/assets/pku.png'
 import Section from '@/components/home/Section.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import config from '@/site-config'
+import { linkGroups } from '../data/links'
 
 export const prerender = true
 
@@ -80,11 +81,20 @@ const experience = [
     </Section>
 
     <Section title='Papers' href='/papers' />
+    <Section title='Links' href='/links'>
+      <ul class='directory-links'>
+        {linkGroups.map(({ id, title }) => (
+          <li><a href={`/links#${id}`}>{title}</a></li>
+        ))}
+      </ul>
+    </Section>
   </main>
 </PageLayout>
 
 <style>
   .home { padding-bottom: 3rem; }
+  .directory-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; align-items: baseline; }
+  .directory-links a { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 0.2em; }
   .profile {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(9rem, 13rem);

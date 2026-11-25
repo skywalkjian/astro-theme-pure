@@ -80,9 +80,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
   .utilities :global(svg) { width: 1.12rem; height: 1.12rem; }
   .utilities :global(.mode-dark), :global(.dark) .utilities :global(.mode-light) { display: none; }
   :global(.dark) .utilities :global(.mode-dark) { display: block; }
-  @media (max-width: 620px) {
+  @media (max-width: 680px) {
     .site-header { flex-wrap: wrap; gap: 0; padding-top: 0.8rem; }
-    nav { order: 1; width: 100%; gap: 1.4rem; padding-block: 0.25rem; flex-wrap: wrap; }
+    nav { order: 1; width: 100%; gap: clamp(0.5rem, 3vw, 1.4rem); padding-block: 0.25rem; flex-wrap: wrap; }
     .utilities { border: 0; }
   }
 </style>

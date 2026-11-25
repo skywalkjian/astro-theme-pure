@@ -50,6 +50,7 @@ export const theme: ThemeUserConfig = {
       { title: 'Home', link: '/' },
       { title: 'Papers', link: '/papers' },
       { title: 'Projects', link: '/projects' },
+      { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' },
       { title: 'CV', link: '/cv/moderncv.pdf' }
     ]

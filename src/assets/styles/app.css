@@ -3,12 +3,14 @@
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-Variable.ttf');
   font-style: normal;
+  font-weight: 300 900;
   font-display: swap;
 }
 @font-face {
   font-family: 'Satoshi';
   src: url('/fonts/Satoshi-VariableItalic.ttf');
   font-style: italic;
+  font-weight: 300 900;
   font-display: swap;
 }
 html {
@@ -17,18 +19,18 @@ html {
 
 /* Theme */
 :root {
-  --background: 210 33% 99%;
-  --foreground: 240 10% 3.9%;
+  --background: 0 0% 100%;
+  --foreground: 340 8% 13%;
   --card: 0 0% 100%;
   --card-foreground: 240 10% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
-  --primary: 200 29% 45%;
+  --primary: 350 57% 36%;
   --primary-foreground: 0 0% 92.5%;
   --secondary: 240 4.8% 95.9%;
   --secondary-foreground: 240 5.9% 10%;
   --muted: 240 4.8% 95%;
-  --muted-foreground: 240 3.8% 28.1%;
+  --muted-foreground: 340 4% 34%;
   --accent: 240 4.8% 95.9%;
   --accent-foreground: 240 5.9% 10%;
   --destructive: 0 72.22% 50.59%;
@@ -45,7 +47,7 @@ html {
   --card-foreground: 0 0% 98%;
   --popover: 240 10% 3.9%;
   --popover-foreground: 0 0% 98%;
-  --primary: 195 95% 85%;
+  --primary: 350 68% 78%;
   --primary-foreground: 240 3.7% 15.9%;
   --secondary: 240 3.7% 15.9%;
   --secondary-foreground: 0 0% 98%;

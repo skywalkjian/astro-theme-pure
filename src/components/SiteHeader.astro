@@ -1,0 +1,88 @@
+---
+import { Icon } from 'astro-pure/user'
+import config from 'virtual:config'
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/'
+---
+
+<header class='site-header'>
+  <a class='signature' href='/'>{config.author}</a>
+  <nav aria-label='Main navigation'>
+    {config.header.menu.map(({ link, title }) => (
+      <a href={link} aria-current={currentPath === link ? 'page' : undefined}>{title}</a>
+    ))}
+  </nav>
+  <div class='utilities'>
+    <a href='/search' aria-label='Search' title='Search'><Icon name='search' /></a>
+    <button type='button' id='theme-switch' aria-label='Change color theme' title='Change color theme'>
+      <Icon class='mode-light' name='sun' />
+      <Icon class='mode-dark' name='moon' />
+    </button>
+  </div>
+</header>
+
+<script>
+  import { setTheme } from 'astro-pure/utils'
+
+  const switcher = document.querySelector<HTMLButtonElement>('#theme-switch')
+  if (switcher) {
+    const updateLabel = () => {
+      const theme = localStorage.getItem('theme') || 'system'
+      switcher.title = `Color theme: ${theme}. Change theme`
+      switcher.setAttribute('aria-label', switcher.title)
+    }
+    updateLabel()
+    switcher.addEventListener('click', () => {
+      setTheme(undefined, true)
+      updateLabel()
+    })
+  }
+</script>
+
+<style>
+  .site-header, nav, .utilities { display: flex; align-items: center; }
+  .site-header {
+    border-bottom: 1px solid hsl(var(--border));
+    gap: 1.25rem;
+    min-height: 5rem;
+  }
+  .signature {
+    margin-inline-end: auto;
+    font: 600 1.35rem Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+  nav { gap: clamp(1rem, 2.5vw, 1.75rem); }
+  nav a {
+    padding-block: 0.6rem;
+    font-size: 0.9375rem;
+    font-weight: 550;
+  }
+  nav a[aria-current='page'] {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.45rem;
+  }
+  .utilities {
+    border-inline-start: 1px solid hsl(var(--border));
+    padding-inline-start: 0.75rem;
+    gap: 0.25rem;
+  }
+  .utilities a, button {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    color: hsl(var(--muted-foreground));
+  }
+  button:hover { color: hsl(var(--primary)); }
+  .utilities :global(svg) { width: 1.12rem; height: 1.12rem; }
+  .utilities :global(.mode-dark), :global(.dark) .utilities :global(.mode-light) { display: none; }
+  :global(.dark) .utilities :global(.mode-dark) { display: block; }
+  @media (max-width: 620px) {
+    .site-header { flex-wrap: wrap; gap: 0; padding-top: 0.8rem; }
+    nav { order: 1; width: 100%; gap: 1.4rem; padding-block: 0.25rem; flex-wrap: wrap; }
+    .utilities { border: 0; }
+  }
+</style>

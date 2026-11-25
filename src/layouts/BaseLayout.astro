@@ -1,5 +1,6 @@
 ---
-import { Footer, Header, ThemeProvider } from 'astro-pure/components/basic'
+import { ThemeProvider } from 'astro-pure/components/basic'
+import SiteHeader from '@/components/SiteHeader.astro'
 import type { SiteMeta } from 'astro-pure/types'
 import BaseHead from '@/components/BaseHead.astro'
 import config from '@/site-config'
@@ -35,10 +36,17 @@ const {
         />
       )
     }
-    <div class='w-full max-w-[70rem] px-4 sm:px-7 lg:px-10'>
-      <Header />
+    <div class='site-shell'>
+      <SiteHeader />
       <slot />
-      <Footer />
+      <footer class='site-footer'>
+        <span>© {new Date().getFullYear()} {config.author}</span>
+        <div>
+          <a href='/links'>Links</a>
+          <a href='/terms/list'>Site policy</a>
+          {config.footer.credits && <a href='https://github.com/cworld1/astro-theme-pure'>Astro Theme Pure</a>}
+        </div>
+      </footer>
     </div>
 
     {/* Set highlight color */}
@@ -55,3 +63,28 @@ const {
     </style>
   </body>
 </html>
+
+<style>
+  .site-shell {
+    width: min(100% - 3rem, 60rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  .site-footer {
+    margin-top: auto;
+    padding: 1.4rem 0 2rem;
+    border-top: 1px solid hsl(var(--border));
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.8125rem;
+  }
+  .site-footer div { display: flex; gap: 1rem; }
+  @media (max-width: 600px) {
+    .site-shell { width: calc(100% - 2.5rem); }
+  }
+</style>

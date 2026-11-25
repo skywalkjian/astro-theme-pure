@@ -3,6 +3,7 @@
 
 import { prod } from 'astro-pure/server'
 import type { SiteMeta } from 'astro-pure/types'
+import avatar from '@/assets/avatar.png'
 import config from '@/site-config'
 
 type Props = SiteMeta
@@ -11,7 +12,7 @@ const { articleDate, description, ogImage, title } = Astro.props
 
 const siteTitle = `${title} ${config.titleDelimiter} ${config.title}`
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
-const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', Astro.url).href
+const socialImageURL = new URL(ogImage || avatar.src, Astro.site).href
 ---
 
 <meta charset='utf-8' />
@@ -54,8 +55,8 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 <meta content={config.title} property='og:site_name' />
 <meta content={config.locale.attrs} property='og:locale' />
 <meta content={socialImageURL} property='og:image' />
-<meta content='1200' property='og:image:width' />
-<meta content='630' property='og:image:height' />
+{!ogImage && <meta content={String(avatar.width)} property='og:image:width' />}
+{!ogImage && <meta content={String(avatar.height)} property='og:image:height' />}
 {
   articleDate && (
     <>
@@ -66,7 +67,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 }
 
 {/* Twitter */}
-<meta content='summary_large_image' property='twitter:card' />
+<meta content={ogImage ? 'summary_large_image' : 'summary'} property='twitter:card' />
 <meta content={canonicalURL} property='twitter:url' />
 <meta content={title} property='twitter:title' />
 <meta content={description} property='twitter:description' />
@@ -74,14 +75,6 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 
 {/* Sitemap */}
 <link href='/sitemap-index.xml' rel='sitemap' />
-
-{/* RSS auto-discovery */}
-<link
-  rel='alternate'
-  type='application/rss+xml'
-  title={config.title}
-  href={`${Astro.site}rss.xml`}
-/>
 
 <meta content={Astro.generator} name='generator' />
 

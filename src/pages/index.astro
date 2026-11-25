@@ -1,196 +1,140 @@
 ---
 import { Image } from 'astro:assets'
-
-import { Quote } from 'astro-pure/advanced'
-import { PostPreview } from 'astro-pure/components/pages'
-import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
-import { Button, Card, Icon, Label } from 'astro-pure/user'
-import PageLayout from '@/layouts/BaseLayout.astro'
-import ProjectCard from '@/components/home/ProjectCard.astro'
-import Section from '@/components/home/Section.astro'
-import SkillLayout from '@/components/home/SkillLayout.astro'
+import { Icon } from 'astro-pure/user'
 import avatar from '@/assets/avatar.png'
+import pku from '@/assets/pku.png'
+import Section from '@/components/home/Section.astro'
+import PageLayout from '@/layouts/BaseLayout.astro'
 import config from '@/site-config'
 
-const languages = ['CPP', 'Python','Rust']
-const frontend = ['waiting']
-const backend = ['waiting']
+export const prerender = true
 
-const MAX_POSTS = 10
-const allPosts = await getBlogCollection()
-const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+const experience = [
+  {
+    institution: 'RedNote Dots',
+    role: 'Research Intern, Multimodal Team',
+    dates: 'Apr 2026 – present',
+    focus: 'Generative transformers and reward-guided post-training for image generation.'
+  },
+  {
+    institution: 'The Chinese University of Hong Kong, Shenzhen',
+    role: 'Research Assistant',
+    dates: 'Jul – Sep 2026',
+    focus: 'Architectures for continuous diffusion language models.'
+  },
+  {
+    institution: 'Huawei',
+    role: 'R&D Intern, MindSpore',
+    dates: 'Nov 2025 – Jan 2026',
+    focus: 'Operator fusion and scheduling for heterogeneous computing.'
+  }
+]
 ---
 
-<PageLayout meta={{ title: 'Home' }} highlightColor='#659EB9'>
-  <main class='flex w-full flex-col items-center'>
-    <section class='animate mb-10 flex flex-col items-center gap-y-7' id='content-header'>
-      <Image
-        src={avatar}
-        alt='profile'
-        class='h-36 w-auto rounded-full border p-1'
-        loading='eager'
-      />
-
-      <div class='flex flex-col items-center gap-y-4'>
-        <h1 class='text-3xl font-bold'>{config.author}</h1>
-        <div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-          <Label title='China'>
-            <Icon name='location' class='size-5' slot='icon' />
-          </Label>
-          <Label
-            title='Source code'
-            as='a'
-            href='https://github.com/skywalkjian/astro-theme-pure'
-            target='_blank'
-          >
-            <Icon name='github' class='size-5' slot='icon' />
-          </Label>
+<PageLayout meta={{ title: 'Academic Homepage' }}>
+  <main class='home' data-pagefind-body>
+    <section class='profile' aria-labelledby='profile-name'>
+      <div>
+        <a class='affiliation' href='https://www.pku.edu.cn/'>
+          <Image src={pku} alt='' width={29} height={29} />
+          Peking University
+        </a>
+        <h1 id='profile-name'>{config.author}</h1>
+        <p class='intro'>
+          I’m an undergraduate studying artificial intelligence at Peking University.
+          My research focuses on generative models and multimodal learning, particularly
+          image generation and diffusion language models.
+        </p>
+        <div class='contacts'>
+          <a href='mailto:bjdx2385005155@stu.pku.edu.cn'><Icon name='email' />Email</a>
+          <a href='https://github.com/skywalkjian'><Icon name='github' />GitHub</a>
+          <a href='/cv/moderncv.pdf'><Icon name='document' />Curriculum vitae</a>
         </div>
       </div>
+      <div class='portrait'>
+        <Image src={avatar} alt='Hand-drawn profile avatar' widths={[212, 424]} sizes='(max-width: 640px) 112px, 200px' width={212} loading='eager' />
+      </div>
+    </section>
 
-     
-{/* Get template */}
-    {
-      /*<a
-        href='https://github.com/cworld1/astro-theme-pure'
-        target='_blank'
-        class='flex flex-row items-center gap-x-3 rounded-full border bg-background px-4 py-2 text-sm shadow-sm transition-shadow hover:shadow-md'
-      >
-        <span class='relative flex items-center justify-center'>
-          <span
-           class='absolute size-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-          ></span>
-          <span class='size-2 rounded-full bg-green-400'></span>
-        </span>
-        <p class='font-medium text-muted-foreground'>Get Template</p>
-      </a>
-    </section>*/
-}
-    
-    <div id='content' class='animate flex flex-col gap-y-10 md:w-4/5 lg:w-5/6'>
-      <Section title='About'>
-        <p class='text-muted-foreground'>
-          I am an undergraduate student majoring in Computer Science. My interests have shifted from AI infrastructure toward my current research directions: generative models and multimodal learning.
-        </p>
-        <p class='text-muted-foreground'>
-          This is my personal website, designed to host my study notes and share some of my thoughts and ideas.Though this is now a desolate wilderness, perhaps one day it will bloom with a sky full of stars.
-        </p>
-        <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
-      </Section>
-
-      {
-        allPostsByDate.length > 0 && (
-          <Section title='Posts'>
-            <ul class='flex flex-col gap-y-1.5 sm:gap-y-2'>
-              {allPostsByDate.map((p) => (
-                <li class='flex flex-col gap-x-2 sm:flex-row'>
-                  <PostPreview post={p} />
-                </li>
-              ))}
-            </ul>
-            <Button title='More posts' class='w-fit self-end' href='/blog' style='ahead' />
-          </Section>
-        )
-      }
-
-      
-         {/*<Section title='Experience'>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      >
-        <ul class='ms-4 list-disc text-muted-foreground'>
-          <li>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!
-
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
-          </li>
-        </ul>
-      </Card>
-      <Card
-        heading='Lorem Ipsum'
-        subheading='Sit amet consectetur'
-        date='Dec 2022 - Nov 2023'
-        imagePath='/src/assets/about-astro.png'
-        altText='Lorem, ipsum dolor sit'
-        imageClass='h-12 w-auto md:-start-16'
-      />
-    </Section>*/}
-      
-      <Section title='Education'>
-        <Card
-          as='a'
-          heading='Peking University'
-          subheading='Majoring in Computer Science with a focus on Artificial Intelligence'
-          date='2024 September - now'
-          href='https://www.pku.edu.cn/'
-        >
-          
-             <ul class='ms-4 list-disc text-muted-foreground'>
-          
-          <li>
-            I am honored to study at pku EECS
-            {/*Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-            molestiae laboriosam pariatur!*/}
-          </li>
-          {/*<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>*/}
-          
-        </ul>
-          
-        </Card>
-      </Section>
-
-      {/*<Section title='Website List'>
-        <div class='grid grid-cols-1 gap-3 sm:grid-cols-2'>
-          <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='dolor sit amet, oratio ornatus explicari pro ex'
-            imagePath='/src/assets/projects/pku.png'
-            //imagePath='/src/assets/projects/alex-tyson-2BAXJ7ha74s-unsplash.jpg'
-          />
-          <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='dolor sit amet, oratio ornatus explicari pro ex'
-            imagePath='/src/assets/projects/angelica-teran-Bk9hpaXHK4o-unsplash.jpg'
-          />
-          <ProjectCard
-            href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-            heading='Lorem ipsum'
-            subheading='dolor sit amet, oratio ornatus explicari pro ex'
-            imagePath='/src/assets/projects/kseniia-zapiatkina-yATU3rg8tNI-unsplash.jpg'
-          />
-          <ProjectCard
-            href='/projects'
-            heading='More projects'
-            subheading='Check out more projects'
-            imagePath='/src/assets/projects/wen-qiao-g_w8I64FiO0-unsplash.jpg'
-          />
+    <Section title='Education'>
+      <article class='entry'>
+        <div class='entry-heading'>
+          <h3>Peking University</h3>
+          <span class='dates'>Sep 2024 – present</span>
         </div>
-      </Section>*/}
+        <p>B.S. in Artificial Intelligence, EECS</p>
+      </article>
+    </Section>
 
-      {/*<Section title='Certifications'>
-        <Card
-          as='a'
-          heading='Lorem ipsum'
-          subheading='Lorem ipsum dolor sit amet, vidit suscipit at mei. Quem denique mea id. Usu ei regione indoctum dissentiunt, cu meliore fuisset mei, vel quod voluptua ne. Ex dicat impedit mel, at eum oratio possit voluptatum. Dicat ceteros cu vim. Impetus fuisset ullamcorper pri cu, his posse iisque ad, aliquam honestatis usu id.'
-          date='July 2024'
-          href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        />
-      </Section>*/}
+    <Section title='Experience'>
+      {experience.map(({ institution, role, dates, focus }) => (
+        <article class='entry'>
+          <div class='entry-heading'>
+            <h3>{institution}</h3>
+            <span class='dates'>{dates}</span>
+          </div>
+          <p>{role}</p>
+          <p class='focus'>{focus}</p>
+        </article>
+      ))}
+    </Section>
 
-      <Section title='Skills'>
-        <SkillLayout title='Languages' skills={languages} />
-        <SkillLayout title='Frontend' skills={frontend} />
-        <SkillLayout title='Backend' skills={backend} />
-      </Section>
-    </div>
-    <Quote class='mt-12' />
+    <Section title='Papers' href='/papers' />
   </main>
 </PageLayout>
+
+<style>
+  .home { padding-bottom: 3rem; }
+  .profile {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(9rem, 13rem);
+    gap: clamp(2rem, 7vw, 6.25rem);
+    align-items: center;
+    padding: clamp(3rem, 7vw, 5rem) 0;
+  }
+  .affiliation, .contacts, .contacts a { display: flex; align-items: center; }
+  .affiliation {
+    width: fit-content;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 650;
+    color: hsl(var(--primary));
+  }
+  h1 {
+    margin: 0.85rem 0 1.1rem;
+    font: 400 clamp(3.15rem, 6.8vw, 5.35rem) / 1 Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.055em;
+  }
+  .intro {
+    max-width: 56ch;
+    font-size: clamp(1.05rem, 1.6vw, 1.17rem);
+    line-height: 1.65;
+    color: hsl(var(--muted-foreground));
+  }
+  .contacts { margin-top: 1.35rem; gap: 0.45rem 1.4rem; flex-wrap: wrap; }
+  .contacts a { gap: 0.38rem; padding-block: 0.25rem; font-size: 0.95rem; font-weight: 600; }
+  .contacts :global(svg) { height: 1.1rem; width: 1.1rem; color: hsl(var(--primary)); }
+  .portrait {
+    padding: 0.4rem;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+  }
+  .portrait img { width: 100%; height: auto; }
+  .entry + .entry { margin-top: 1.6rem; }
+  .entry-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 0.15rem 0.75rem; flex-wrap: wrap; }
+  h3 { font-weight: 650; font-size: 1.1rem; line-height: 1.4; }
+  .dates { font-size: 0.875rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .dates, .focus { color: hsl(var(--muted-foreground)); }
+  .entry p { margin-top: 0.2rem; line-height: 1.5; }
+  .entry .focus { font-size: 0.95rem; }
+  @media (max-width: 640px) {
+    .profile { display: block; position: relative; padding-block: 2.5rem; }
+    .affiliation, h1 { max-width: calc(100% - 6.8rem); }
+    h1 { margin-bottom: 2rem; }
+    .portrait { position: absolute; inset: 2.5rem 0 auto auto; width: clamp(4.65rem, 16vw, 6.6rem); padding: 0.2rem; }
+  }
+  @media (max-width: 380px) {
+    h1 { font-size: 2.6rem; }
+    .affiliation { font-size: 0.875rem; }
+  }
+</style>

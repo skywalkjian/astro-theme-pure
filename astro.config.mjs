@@ -30,7 +30,7 @@ import config from './src/site.config.ts'
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
-  site: 'https://astro-pure.js.org',
+  site: 'https://skywalkjian-site.vercel.app',
   // base: '/docs',
   trailingSlash: 'never',
 
@@ -113,6 +113,8 @@ export default defineConfig({
     contentIntellisense: true
   },
   vite: {
+    // Resolve the theme's virtual config through its Vite plugin during development.
+    optimizeDeps: { exclude: ['astro-pure/utils'] },
     plugins: [
       //   visualizer({
       //     emitFile: true,

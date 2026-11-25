@@ -3,11 +3,11 @@ import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } fro
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: 'Skywalkjian-Site',
+  title: 'Chen Yujian',
   /** Will be used in index page & copyright declaration */
-  author: 'skywalkjian',
+  author: 'Chen Yujian',
   /** Description metadata for your website. Can be used in page metadata. */
-  description: 'waiting to update',
+  description: 'Academic homepage of Chen Yujian, an undergraduate at Peking University studying generative models and multimodal learning.',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** Specify the default language for this site. */
@@ -47,12 +47,11 @@ export const theme: ThemeUserConfig = {
   /** Configure the header of your site. */
   header: {
     menu: [
-      { title: 'Blog', link: '/blog' },
-     // { title: 'Docs', link: '/docs' },
+      { title: 'Home', link: '/' },
+      { title: 'Papers', link: '/papers' },
       { title: 'Projects', link: '/projects' },
-      { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' },
-      {title: 'CV', link: '/cv/moderncv.pdf'}
+      { title: 'CV', link: '/cv/moderncv.pdf' }
     ]
   },
 

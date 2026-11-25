@@ -7,7 +7,7 @@ export const theme: ThemeUserConfig = {
   /** Will be used in index page & copyright declaration */
   author: 'Chen Yujian',
   /** Description metadata for your website. Can be used in page metadata. */
-  description: 'Academic homepage of Chen Yujian, an undergraduate at Peking University studying generative models and multimodal learning.',
+  description: 'Chen Yujian studies generative modeling at Peking University, with a focus on efficient language and image generation.',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** Specify the default language for this site. */

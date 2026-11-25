@@ -12,21 +12,27 @@ export const linkGroups: LinkGroup[] = [
     title: 'Research Mentors',
     people: [
       {
-        name: 'Tianyang Hu',
-        link: 'https://hu-tianyang.github.io/',
-        intro: 'Supervised my work on diffusion language models at CUHK-Shenzhen.'
-      },
-      {
         name: 'Weijian Luo',
         link: 'https://pkulwj1994.github.io/',
         intro: 'Supervised my research on image generation at RedNote Dots.'
+      },
+      {
+        name: 'Tianyang Hu',
+        link: 'https://hu-tianyang.github.io/',
+        intro: 'Supervised my work on diffusion language models at CUHK-Shenzhen.'
       }
     ]
   },
   {
     id: 'collaborators',
     title: 'Collaborators',
-    people: []
+    people: [
+      {
+        name: 'Guang Cheng',
+        link: 'https://people.stat.ucla.edu/guangcheng/2.html',
+        intro: 'Professor of Statistics and Data Science at UCLA. We worked together on efficient language generation.'
+      }
+    ]
   },
   {
     id: 'friends',

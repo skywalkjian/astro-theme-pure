@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 import { Icon } from 'astro-pure/user'
 import avatar from '@/assets/avatar.png'
 import pku from '@/assets/pku.png'
+import PaperList from '@/components/PaperList.astro'
 import Section from '@/components/home/Section.astro'
 import PageLayout from '@/layouts/BaseLayout.astro'
 import config from '@/site-config'
@@ -43,8 +44,8 @@ const experience = [
         <h1 id='profile-name'>{config.author}</h1>
         <p class='intro'>
           I’m an undergraduate studying artificial intelligence at Peking University.
-          My research focuses on generative models and multimodal learning, particularly
-          image generation and diffusion language models.
+          I study generative modeling broadly, with a focus on efficient generative models
+          for language and images.
         </p>
         <div class='contacts'>
           <a href='mailto:yj_chen@stu.pku.edu.cn'><Icon name='email' />Email</a>
@@ -56,6 +57,10 @@ const experience = [
         <Image src={avatar} alt='Hand-drawn profile avatar' widths={[212, 424]} sizes='(max-width: 640px) 112px, 200px' width={212} loading='eager' />
       </div>
     </section>
+
+    <Section title='Papers' href='/papers'>
+      <PaperList />
+    </Section>
 
     <Section title='Education'>
       <article class='entry'>
@@ -80,7 +85,6 @@ const experience = [
       ))}
     </Section>
 
-    <Section title='Papers' href='/papers' />
     <Section title='Links' href='/links'>
       <ul class='directory-links'>
         {linkGroups.map(({ id, title }) => (

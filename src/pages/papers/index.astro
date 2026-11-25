@@ -1,7 +1,10 @@
 ---
+import PaperList from '@/components/PaperList.astro'
 import AcademicPage from '@/layouts/AcademicPage.astro'
 
 export const prerender = true
 ---
 
-<AcademicPage title='Papers' />
+<AcademicPage title='Papers'>
+  <PaperList />
+</AcademicPage>

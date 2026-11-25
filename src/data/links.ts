@@ -8,16 +8,6 @@ interface LinkGroup {
 
 export const linkGroups: LinkGroup[] = [
   {
-    id: 'friends',
-    title: 'Friends',
-    people: blogroll.friends.find((group) => group.id_name === 'cf-links')?.link_list ?? []
-  },
-  {
-    id: 'collaborators',
-    title: 'Collaborators',
-    people: []
-  },
-  {
     id: 'research-mentors',
     title: 'Research Mentors',
     people: [
@@ -32,5 +22,15 @@ export const linkGroups: LinkGroup[] = [
         intro: 'Supervised my research on image generation at RedNote Dots.'
       }
     ]
+  },
+  {
+    id: 'collaborators',
+    title: 'Collaborators',
+    people: []
+  },
+  {
+    id: 'friends',
+    title: 'Friends',
+    people: blogroll.friends.find((group) => group.id_name === 'cf-links')?.link_list ?? []
   }
 ]

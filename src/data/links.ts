@@ -30,7 +30,7 @@ export const linkGroups: LinkGroup[] = [
       {
         name: 'Guang Cheng',
         link: 'https://people.stat.ucla.edu/guangcheng/2.html',
-        intro: 'Professor of Statistics and Data Science at UCLA. We worked together on efficient language generation.'
+        intro: 'Professor of Statistics and Data Science at UCLA.'
       }
     ]
   },

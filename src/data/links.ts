@@ -14,7 +14,7 @@ export const linkGroups: LinkGroup[] = [
       {
         name: 'Weijian Luo',
         link: 'https://pkulwj1994.github.io/',
-        intro: 'Supervised my research on image generation at RedNote Dots.'
+        intro: 'At RedNote Dots, Weijian supervised my research on efficient generative models and generative modeling more broadly.'
       },
       {
         name: 'Tianyang Hu',
